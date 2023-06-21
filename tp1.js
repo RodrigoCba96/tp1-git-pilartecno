@@ -43,15 +43,15 @@ console.log(contadores);
 */
 
 function findKeysInCommon(objeto1, objeto2) {
-  // Tu código aquí
+
+  const keys1 = Object.keys(obj1);
+  const keys2 = Object.keys(obj2);
+  return keys1.filter(key => keys2.includes (key))
+
 }
 
-// Llamamos a las funciones y mostramos los resultados
+const obj1 = {a: 1, b: 2, c: 3};
+const obj2 = {b: 4, c: 5, d: 6};
+const commonKeys = findKeysInCommon(obj1, obj2);
 
-function main() {
-  console.log(extractValues({a: 1, b: 2, c: 3}));
-  console.log(arrayToLengthCounters(['gato', 'perro', 'elefante']));
-  console.log(findKeysInCommon({a: 1, b: 2, c: 3}, {b: 4, c: 5, d: 6}));
-}
-
-main();
+console.log(commonKeys);
