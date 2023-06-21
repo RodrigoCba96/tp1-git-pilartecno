@@ -5,10 +5,14 @@
   extractValues({a: 1, b: 2, c: 3}) debería retornar [1, 2, 3]
 */
 
-function extractValues(data) {
-  // Tu código aquí
+function extractValues(obj) {
+  return Object.values(obj);
 }
 
+const obj = {a: 1, b: 2, c: 2}
+const values = extractValues(obj);
+
+console.log(values)
 /*  
   Ejercicio 2: 
   Implementar la función 'arrayToLengthCounters' que toma un array de strings y retorna un objeto donde cada elemento
