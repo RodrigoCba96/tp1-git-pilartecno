@@ -20,11 +20,20 @@ console.log(values)
   Ejemplo: 
   arrayToLengthCounters(['gato', 'perro', 'elefante']) debería retornar {gato: 4, perro: 5, elefante: 8}
 */
-
-function arrayToLengthCounters(array) {
-  // Tu código aquí
+function arrayToLengthCounters(arr) {
+  const resultado = {};
+  for (let i = 0; i < arr.length; i++) {
+    const cadena = arr [i];
+    const longitud = cadena.length;
+    resultado[cadena] = longitud; 
+  }
+return resultado;
 }
 
+const cadenas = ['gato', 'perro', 'elefante'];
+const contadores = arrayToLengthCounters(cadenas);
+
+console.log(contadores);
 /*  
   Ejercicio 3: 
   Implementar la función 'findKeysInCommon' que toma dos objetos y retorna un array con los nombres de las 
