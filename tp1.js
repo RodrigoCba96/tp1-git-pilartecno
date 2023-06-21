@@ -5,10 +5,14 @@
   extractValues({a: 1, b: 2, c: 3}) debería retornar [1, 2, 3]
 */
 
-function extractValues(data) {
-  // Tu código aquí
+function extractValues(obj) {
+  return Object.values(obj);
 }
 
+const obj = {a: 1, b: 2, c: 2}
+const values = extractValues(obj);
+
+console.log(values)
 /*  
   Ejercicio 2: 
   Implementar la función 'arrayToLengthCounters' que toma un array de strings y retorna un objeto donde cada elemento
@@ -16,11 +20,20 @@ function extractValues(data) {
   Ejemplo: 
   arrayToLengthCounters(['gato', 'perro', 'elefante']) debería retornar {gato: 4, perro: 5, elefante: 8}
 */
-
-function arrayToLengthCounters(array) {
-  // Tu código aquí
+function arrayToLengthCounters(arr) {
+  const resultado = {};
+  for (let i = 0; i < arr.length; i++) {
+    const cadena = arr [i];
+    const longitud = cadena.length;
+    resultado[cadena] = longitud; 
+  }
+return resultado;
 }
 
+const cadenas = ['gato', 'perro', 'elefante'];
+const contadores = arrayToLengthCounters(cadenas);
+
+console.log(contadores);
 /*  
   Ejercicio 3: 
   Implementar la función 'findKeysInCommon' que toma dos objetos y retorna un array con los nombres de las 
@@ -30,15 +43,15 @@ function arrayToLengthCounters(array) {
 */
 
 function findKeysInCommon(objeto1, objeto2) {
-  // Tu código aquí
+
+  const keys1 = Object.keys(obj1);
+  const keys2 = Object.keys(obj2);
+  return keys1.filter(key => keys2.includes (key))
+
 }
 
-// Llamamos a las funciones y mostramos los resultados
+const obj1 = {a: 1, b: 2, c: 3};
+const obj2 = {b: 4, c: 5, d: 6};
+const commonKeys = findKeysInCommon(obj1, obj2);
 
-function main() {
-  console.log(extractValues({a: 1, b: 2, c: 3}));
-  console.log(arrayToLengthCounters(['gato', 'perro', 'elefante']));
-  console.log(findKeysInCommon({a: 1, b: 2, c: 3}, {b: 4, c: 5, d: 6}));
-}
-
-main();
+console.log(commonKeys);
